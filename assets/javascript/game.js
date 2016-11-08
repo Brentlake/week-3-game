@@ -1,7 +1,17 @@
- var options = ["a","b", "c", "d", "e", "f"];
+ var options = ["a","b", "c", "d"];
 
       var userScore = 0;
       var computerScore = 0;
+
+      var wins = 0;
+      var losses = 0;
+      var lives = 5;
+      
+
+      var showWins = document.getElementById("myWins");
+      var showLosses = document.getElementById("myLosses");
+      var showLives = document.getElementById("myLives");
+      var showLeft = document.getElementById("guessLeft");
 
 
 
@@ -11,14 +21,21 @@
       var computerGuess = options[Math.floor(Math.random() * options.length)];
       alert(computerGuess);
 
-        if (userGuess === "a" || userGuess === "b" || userGuess === "c" || userGuess === "d" || userGuess === "e" || 
-          userGuess === "f"){
-        if (computerGuess === userGuess) {alert("Psychic Wins");}
-        else if (computerGuess != userGuess) {alert("You Win"); userScore++;}
+       
+        if (computerGuess === userGuess) {
+          console.log('losses ' + ++losses);
 
-
-
-      alert("User score = " + userScore + "computer score= " + computerScore);
+        }
+        else if (computerGuess != userGuess) {
+          console.log('wins ' + ++wins);
+        }
+        if (userGuess === computerGuess){
+          console.log('lives ' + --lives);
+        }
       }
 
-      };
+
+
+      
+
+    
